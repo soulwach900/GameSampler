@@ -1,21 +1,32 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import Home from '../pages/home/index'
-import TicTacToe from '../pages/games/tic_tac_toe/index'
-import ErrorPage from '../pages/error/index'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './pages/home/index'
+import TicTacToe from './pages/games/tic_tac_toe/index'
+import ErrorPage from './pages/error/index'
+import Login from "./pages/home/login/index.jsx";
+import HomeGamesList from "./pages/games/index.jsx";
+import './index.css'
+
 
 const router = createBrowserRouter([
   {
     errorElement: < ErrorPage />,
     children: [
       {
-        path: "InstitutoEvoluir.testWeb/",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "InstitutoEvoluir.testWeb/games",
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/games",
+        element: <HomeGamesList />,
+      },
+      {
+        path: "/tictactoe",
         element: <TicTacToe />,
       }
     ],

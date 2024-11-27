@@ -8,6 +8,10 @@ app.use(cors())
 
 const filePath = "server/data/users.json";
 
+/*
+* Funções de I/O
+* */
+
 function ReadFile(input) {
   if (!fs.existsSync(input)) {
     console.error(`File: ${input} Not Exists`);
@@ -24,14 +28,34 @@ function WriteFile(input, jsonData) {
   console.log("Updated File!");
 }
 
+/*
+* Funções do Servidor
+* */
+
+const jsonData = ReadFile(filePath);
+
+app.post("/login", (req, res) => {
+  const { id, password } = req.body;
+
+  if (!id || !password) {
+    return res.status(400).send("ID and Password are required.");
+  }
+
+  const user = jsonData.users.find((user) => user.id === id && user.password === password);
+
+  if (!user) {
+    return res.status(401).send("Invalid ID or Password.");
+  }
+
+  res.status(200).send("Login Successful!");
+});
+
 app.post("/add-user", (req, res) => {
   const { id, name, email, password } = req.body;
 
   if (!id || !name || !email || !password) {
-    return res.status(400).send("Please Use (id, name, email, password)");
+    return res.status(400).send("Please Use (ID, name, email, password)");
   }
-
-  const jsonData = ReadFile(filePath);
 
   const userExists = jsonData.users.find(user => user.id === id);
   if (userExists) {
@@ -53,8 +77,6 @@ app.delete("/remove-user/:id", (req, res) => {
     return res.status(400).send("User ID is required.");
   }
 
-  const jsonData = ReadFile(filePath);
-
   const userIndex = jsonData.users.findIndex(user => user.id === id);
 
   if (userIndex === -1) {
@@ -69,9 +91,12 @@ app.delete("/remove-user/:id", (req, res) => {
 })
 
 app.get("/users", (req, res) => {
-  const jsonData = ReadFile(filePath);
   res.status(200).json(jsonData.users);
 });
+
+/*
+* Rodar Servidor
+* */
 
 app.listen(8080, () => {
   console.log("Server: 8080");
