@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
-import '../style.css';
+import './style.css';
 
 function Home() {
     const [users, setUsers] = useState([]);
@@ -71,17 +71,17 @@ function Home() {
 
     function Login(id) {
         if (id) {
-            navigate('/login', { state: { userId: id } });
+            navigate('/login', {state: {userId: id}});
         } else {
             alert(`Erro ao logar com Id: ${id}`);
         }
     }
 
     return (
-        <div className="home">
+        <div>
             <div className="home_login">
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <p>Registrar:</p>
+                    <h2>Registrar:</h2>
                     <input
                         name="user"
                         type="text"

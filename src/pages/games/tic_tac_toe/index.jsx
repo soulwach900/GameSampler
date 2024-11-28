@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import '../../style.css'
+import './style.css'
 
 const GetKeyFromIndex = (index) => {
     const row = Math.floor(index / 3)

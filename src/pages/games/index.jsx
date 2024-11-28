@@ -2,7 +2,8 @@ import "./style.css";
 
 function HomeGamesList() {
     const games = [
-        { id: 1, name: "Tic-Tac Toe)", image: "../../../public/tictactoe_preview.png", link: "/tictactoe" },
+        {id: 1, name: "Tic-Tac Toe", image: "../../../public/tictactoe_preview.png", link: "/tictactoe"},
+        {id: 2, name: "dogeminer", image: "../../../public/clicker_preview.png", link: "/dogecoin_miner"},
     ];
 
     const handleButtonClick = (link) => {
@@ -21,7 +22,7 @@ function HomeGamesList() {
                     className="game-button"
                     onClick={() => handleButtonClick(game.link)}
                 >
-                    <img src={game.image} alt={game.name} className="game-image" />
+                    <img src={game.image} alt={game.name} className="game-image"/>
                 </button>
             ))}
         </div>

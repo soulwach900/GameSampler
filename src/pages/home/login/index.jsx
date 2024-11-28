@@ -1,5 +1,5 @@
 import {useLocation, useNavigate} from 'react-router-dom';
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import "./style.css"
 
 function Login() {
@@ -25,8 +25,8 @@ function Login() {
         try {
             const response = await fetch("http://localhost:8080/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id: userId, password })
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({id: userId, password})
             });
             if (response.ok) {
                 alert("Login Sucedido");
@@ -41,7 +41,7 @@ function Login() {
 
     return (
         <div className="home_login">
-            <h1>Login</h1>
+            <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>

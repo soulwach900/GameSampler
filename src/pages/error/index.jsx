@@ -1,4 +1,4 @@
-import '../style.css'
+import '../home/style.css'
 
 function errorPage() {
     return (

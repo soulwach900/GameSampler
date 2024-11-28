@@ -1,12 +1,14 @@
 # Projeto GamePage
 
-Este projeto é composto por três módulos principais:
+Este projeto é composto por quatro módulos principais:
 
 1. **Jogo da Velha (Tic-Tac-Toe)**: Um jogo simples de Tic-Tac-Toe (ou Jogo da Velha) desenvolvido com React.
-2. **Cadastro e Login de Usuários**: Interface para cadastro, login e remoção de usuários, utilizando leitura e escrita de arquivos locais para armazenar dados em `user.json`.
-3. **Lista de Jogos Disponíveis**: Um módulo para exibir e interagir com os jogos disponíveis no sistema.
+2. **Dogeminer**: Um jogo baseado no original **Dogeminer** onde o jogador clica para minerar Dogecoins e pode investir em upgrades para aumentar a mineração.
+3. **Cadastro e Login de Usuários**: Interface para cadastro, login e remoção de usuários, utilizando leitura e escrita de arquivos locais para armazenar dados em `users.json`.
+4. **Lista de Jogos Disponíveis**: Um módulo para exibir e interagir com os jogos disponíveis no sistema.
 
-![TicTacToe](public/tictac.png)
+![TicTacToe](public/assets/tictactoe/tictac.png)
+![dogeminer](public/assets/clicker/clicker.png)
 
 ---
 
@@ -18,22 +20,30 @@ Este projeto é composto por três módulos principais:
 - Permite que os jogadores façam jogadas alternadas, visualizem o vencedor ou empate, e reiniciem o jogo.
 - O estado do jogo é gerenciado com o React, utilizando hooks (`useState`).
 
-### 2. Cadastro e Login de Usuários
+### 2. Dogeminer
+
+- **Objetivo**: Minerar Dogecoins clicando em um botão.
+- **Upgrades**: O jogador pode investir em upgrades para aumentar a produção de Dogecoins, como mineradores automáticos e upgrades de velocidade.
+- **Estilo**: Baseado no famoso jogo de clicker "Dogeminer", com uma interface simples e divertida.
+- **Objetos Interativos**: O jogo permite a compra de diferentes tipos de equipamentos e mineradores para aumentar a quantidade de Dogecoins minerados ao longo do tempo.
+
+### 3. Cadastro e Login de Usuários
 
 - **Cadastro de Usuários**:
-   - Cadastro com nome, e-mail e senha.
-   - Armazena os dados em um arquivo JSON chamado `users.json`.
+  - Cadastro com nome, e-mail e senha.
+  - Armazena os dados em um arquivo JSON chamado `users.json`.
 - **Login de Usuários**:
-   - Permite autenticar usuários com e-mail e senha previamente cadastrados.
-   - Exibe mensagens de erro em caso de dados inválidos.
+  - Permite autenticar usuários com e-mail e senha previamente cadastrados.
+  - Exibe mensagens de erro em caso de dados inválidos.
 - **Gerenciamento de Usuários**:
-   - Visualização da lista de usuários cadastrados.
-   - Remoção de usuários com base no e-mail.
+  - Visualização da lista de usuários cadastrados.
+  - Remoção de usuários com base no e-mail.
 
-### 3. Lista de Jogos
+### 4. Lista de Jogos
 
 - Uma interface simples para exibir os jogos disponíveis, como:
-   - Jogo da Velha.
+  - Jogo da Velha.
+  - Dogeminer.
 - Facilita a navegação e interação com os jogos integrados ao sistema.
 
 ---
